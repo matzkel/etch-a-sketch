@@ -19,3 +19,21 @@ function createGrid(parentElement, rows = 16, columns = 16) {
 
 const container = document.querySelector(".container");
 createGrid(container);
+
+const gridButton = document.querySelector(".navigation-bar > button");
+gridButton.addEventListener("click", () => {
+    let rows;
+    do {
+        rows = prompt("How many rows:");
+    } while (!rows || isNaN(rows) || rows <= 0);
+
+    let columns;
+    do {
+        columns = prompt("How many columns:");
+    } while (!columns && isNaN(columns) && columns <= 0);
+
+    const gridContainer = document.querySelector(".grid-container");
+    gridContainer.remove();
+
+    createGrid(container, rows, columns);
+});
