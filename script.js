@@ -1,4 +1,4 @@
-function createGrid(parentElement, rows, columns) {
+function createGrid(parentElement, rows = 16, columns = 16) {
     const grid = document.createElement("div");
     grid.classList.add("grid-container");
 
@@ -16,3 +16,6 @@ function createGrid(parentElement, rows, columns) {
 
     parentElement.appendChild(grid);
 }
+
+const container = document.querySelector(".container");
+createGrid(container);
