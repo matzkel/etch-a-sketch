@@ -73,6 +73,6 @@
     transition: background-color .1s ease;
 }
 
-.grid-element:hover {
+.grid-element:hover, .painted {
     background-color: rgb(0, 0, 0);
 }
