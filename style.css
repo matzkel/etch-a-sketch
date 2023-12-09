@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.grid-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-column {
+    flex: 1;
+    display: flex;
+}
+
+.grid-element {
+    flex: 1;
+}
