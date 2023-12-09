@@ -41,12 +41,12 @@ gridButton.addEventListener("click", () => {
     let rows;
     do {
         rows = prompt("How many rows:");
-    } while (!rows || isNaN(rows) || rows <= 0 || rows >= LIMIT);
+    } while (!rows || isNaN(rows) || rows <= 0 || rows > LIMIT);
 
     let columns;
     do {
         columns = prompt("How many columns:");
-    } while (!columns || isNaN(columns) || columns <= 0 || rows >= LIMIT);
+    } while (!columns || isNaN(columns) || columns <= 0 || rows > LIMIT);
 
     const gridContainer = document.querySelector(".grid-container");
     gridContainer.removeEventListener("click", addGridPainting);
