@@ -14,7 +14,21 @@ function createGrid(parentElement, rows = 16, columns = 16) {
         gridContainer.appendChild(gridColumn);
     }
 
+    gridContainer.addEventListener("click", addGridPainting);
     parentElement.appendChild(gridContainer);
+}
+
+function addGridPainting(event) {
+    const gridElement = event.target;
+
+    if (gridElement.classList.contains("grid-element")) {
+        if (gridElement.classList.contains("painted")) {
+            gridElement.classList.remove("painted");
+            return;
+        }
+
+        gridElement.classList.add("painted");
+    }
 }
 
 const container = document.querySelector(".container");
@@ -35,6 +49,7 @@ gridButton.addEventListener("click", () => {
     } while (!columns || isNaN(columns) || columns <= 0 || rows >= LIMIT);
 
     const gridContainer = document.querySelector(".grid-container");
+    gridContainer.removeEventListener("click", addGridPainting);
     gridContainer.remove();
 
     createGrid(container, rows, columns);
