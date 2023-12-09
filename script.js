@@ -1,6 +1,6 @@
 function createGrid(parentElement, rows = 16, columns = 16) {
-    const grid = document.createElement("div");
-    grid.classList.add("grid-container");
+    const gridContainer = document.createElement("div");
+    gridContainer.classList.add("grid-container");
 
     for (let i = 0; i < columns; i++) {
         const gridColumn = document.createElement("div");
@@ -11,10 +11,10 @@ function createGrid(parentElement, rows = 16, columns = 16) {
 
             gridColumn.appendChild(gridElement);
         }
-        grid.appendChild(gridColumn);
+        gridContainer.appendChild(gridColumn);
     }
 
-    parentElement.appendChild(grid);
+    parentElement.appendChild(gridContainer);
 }
 
 const container = document.querySelector(".container");
