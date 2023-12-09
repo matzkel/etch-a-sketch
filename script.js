@@ -22,17 +22,17 @@ createGrid(container);
 
 const gridButton = document.querySelector(".navigation-bar > button");
 gridButton.addEventListener("click", () => {
-    const LIMIT = 100;
-
+    const LIMIT = 64;
+    
     let rows;
     do {
         rows = prompt("How many rows:");
-    } while (!rows || isNaN(rows) || rows <= 0);
+    } while (!rows || isNaN(rows) || rows <= 0 || rows >= LIMIT);
 
     let columns;
     do {
         columns = prompt("How many columns:");
-    } while (!columns && isNaN(columns) && columns <= 0);
+    } while (!columns || isNaN(columns) || columns <= 0 || rows >= LIMIT);
 
     const gridContainer = document.querySelector(".grid-container");
     gridContainer.remove();
