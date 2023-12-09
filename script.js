@@ -22,6 +22,8 @@ createGrid(container);
 
 const gridButton = document.querySelector(".navigation-bar > button");
 gridButton.addEventListener("click", () => {
+    const LIMIT = 100;
+
     let rows;
     do {
         rows = prompt("How many rows:");
